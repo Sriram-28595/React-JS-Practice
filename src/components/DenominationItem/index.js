@@ -1,7 +1,7 @@
 import './index.css'
 
 const DenominationItem = props => {
-  const {eachDetails} = props
+  const {eachDetails, withdrawAmount} = props
   const {id, value} = eachDetails
 
   const onWithdrawal = () => {
@@ -9,7 +9,7 @@ const DenominationItem = props => {
   }
 
   return (
-    <li>
+    <li className="button-cont">
       <button type="button" className="button" onClick={onWithdrawal}>
         {value}
       </button>
