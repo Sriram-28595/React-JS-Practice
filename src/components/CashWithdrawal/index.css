@@ -1,0 +1,96 @@
+.bg-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.cash-withdraw-cont {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 850px;
+  background-color: #150b3e;
+}
+
+@media screen and (min-width: 768px) {
+  .cash-withdraw-cont {
+    width: 60%;
+    max-width: 600px;
+  }
+}
+
+.name {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.name-cont {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #c7d2fe;
+  padding: 12px;
+}
+
+.letter {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.full-name {
+  font-family: 'Roboto';
+  font-size: 32px;
+  color: #d4d3db;
+  margin-left: 10px;
+}
+
+.balance-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #585076;
+  font-weight: 500;
+}
+
+.amount {
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.words {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #382f5a;
+}
+
+.sub-heading {
+  font-family: 'Roboto';
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.caption {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #382f5a;
+}
+
+.buttons-list-cont {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}
