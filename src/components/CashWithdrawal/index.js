@@ -6,48 +6,44 @@ import './index.css'
 
 class CashWithdrawal extends Component {
   state = {
-    amount: 2000,
+    balance: 2000,
   }
 
-  withdrawAmount = id => {
-    if (id === 1) {
-      this.setState(prevState => ({amount: prevState - 50}))
-    } else if (id === 2) {
-      this.setState(prevState => ({amount: prevState - 100}))
-    } else if (id === 3) {
-      this.setState(prevState => ({amount: prevState - 200}))
-    } else {
-      this.setState(prevState => ({amount: prevState - 500}))
-    }
+  updateBalance = value => {
+    this.setState(prevState => ({balance: prevState.balance - value}))
   }
 
   render() {
-    const {amount} = this.state
     const {denominationsList} = this.props
+    const {balance} = this.state
+    const name = 'Sarah Williams'
+    const initial = name.slice(0, 1)
+
     return (
-      <div className="bg-cont">
-        <div className="cash-withdraw-cont">
-          <div className="name">
-            <div className="name-cont">
-              <h1 className="letter">S</h1>
+      <div className="app-container">
+        <div className="cash-withdrawal-container">
+          <div className="user-details-container">
+            <div className="initial-container">
+              <p className="initial">{initial}</p>
             </div>
-            <h1 className="full-name">Sriram S U</h1>
+            <p className="name">{name}</p>
           </div>
-          <div className="balance-counter">
-            <p className="text">Your Balance</p>
-            <div>
-              <p className="amount">{amount}</p>
-              <p className="word">in Rupees</p>
-            </div>
+          <div className="balance-container">
+            <p className="your-balance">Your Balance</p>
+            <p className="balance">
+              {balance}
+              <br />
+              <span className="currency">In Rupees</span>
+            </p>
           </div>
-          <p className="sub-heading">Withdraw</p>
-          <p className="caption">CHOOSE SUM (IN RUPEES)</p>
-          <ul className="buttons-list-cont">
-            {denominationsList.map(each => (
+          <p className="withdraw">Withdraw</p>
+          <p className="choose-sum">CHOOSE SUM (IN RUPEES)</p>
+          <ul className="denominations-list">
+            {denominationsList.map(eachDenomination => (
               <DenominationItem
-                eachDetails={each}
-                key={each.id}
-                withdrawAmount={this.withdrawAmount}
+                key={eachDenomination.id}
+                denominationDetails={eachDenomination}
+                updateBalance={this.updateBalance}
               />
             ))}
           </ul>
